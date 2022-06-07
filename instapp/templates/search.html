@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        {% if usernames%}
+        <h2 class="capitalize">{{ usernames|length }} {{message}} username found...</h2>
+        {% else %}
+        <h2> No username found {{message}}</h2>
+        {% endif %}
+
+    </div>
+    <hr>
+    <div class="row">
+        <div class="container">
+            <div class="card-columns">
+                {% if username %}
+                {% for name in username %}
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" class="img-fluid" src="{{image.image.url}}" size="100px200">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text"> {{name.username}}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
