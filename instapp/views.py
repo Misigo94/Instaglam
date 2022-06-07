@@ -5,8 +5,17 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 # Create your views here.
+
 def home(request):
-    return render (request,'index.html')
+    post=Image.objects.all()
+    form = CommentsForm(request.POST, request.FILES)
+    if request.method == 'POST':
+
+            if form.is_valid():
+                form.save()
+            return HttpResponse("your comment was successfully submitted")
+    return render(request, 'index.html',{'post':post})
+    # return render (request,'index.html')
 
 
 def login_user(request):
@@ -53,5 +62,24 @@ def upload_profile(request):
         
     return render(request,'profile.html',{'form':form})
 
+# def display(request):
+#     post=Image.objects.all()
+#     form = CommentsForm
+#     if request.method == 'POST':
+
+#             if form.is_valid():
+#                 form.save()
+#             return HttpResponse("your comment was successfully submitted")
+#     return render(request, 'index.html',{'post':post})
+
+def comments(request):
+    comm_form=CommentsForm(request.POST, request.FILES)
+    if request.method == 'POST':
+
+            if comm_form.is_valid():
+                comm_form.save()
+            return redirect("/profile")
+        
+    return render(request,'profile.html',{'comm_form':comm_form})
 
 
