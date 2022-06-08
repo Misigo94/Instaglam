@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+    {% block content %}
+
+<style>
+    body{
+    background-image: url('../static/images/back.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    } 
+   .page-header{
+       color:white;
+       text-align: center;
+   }
+</style>
+
+<h1 class="page-header">Register here</h1>
+    <div class="register">
+        <form action="{% url 'register'%}" method="POST" class="form">
+            {% csrf_token %}
+            <!-- <p>Username: {{form.username}}</p><br>
+            <p>Email: {{form.email}}</p><br>
+            <p>Password: {{form.password1}}</p><br>
+            <p>Re enter your password: {{form.password2}}</p><br> -->
+            <p>{{form.as_p}}</p>
+        
+            <button class="button" type="submit">Submit</button>
+        </form>
+    </div>
+
+    {% endblock %}

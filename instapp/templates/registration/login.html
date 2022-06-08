@@ -1,15 +1,43 @@
 {% extends 'base.html'%}
 {% block content %}
 
+
 <style>
-    .form {
+    body {
+
+        /* background-color: rgb(125, 6, 125); */
+        background-image: url('../static/images/back.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+     .form {
         margin-top: 20px;
         /* background-color: black; */
-        width:100%;
+        width:50%;
+    }
+    body{
+
+        background-color: rgba(199, 13, 199, 0.848);
+    }
+    form{
+        align-items: center;
+    }
+    .page-header{
+        /* color:rgb(56, 10, 98); */
+        color:white;
+        text-align: center;
+    }
+    .button{
+        padding: 0.5em;
+        background-color: blueviolet;
+        border-radius:5px;
+        color:white;
     }
 </style>
+
    
-<form action="" method="POST" class="form-login">
+<form action="" method="POST" class="form">
     {% csrf_token %}
     <!-- <div class="form">
 

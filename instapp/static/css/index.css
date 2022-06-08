@@ -1,3 +1,35 @@
-.index{
-    background-color: black;
+ .form {
+     width: 60%;
+     height: 80vh;
+     margin: 50px;
+     margin-left: 25%;
+     /* background: linear-gradient(270deg, rgba(54, 22, 61, 0.65) 0%, rgba(238, 238, 238, 0.65) 100%); */
+    background:(rgba(54, 22, 61, 0.65));
+     border-radius: 10px;
+     padding: 10px
+
+ }
+
+ .button{
+     background-color: rgb(64, 64, 143);
+     border-radius: 5px;
+ }
+.errorlist{
+    display:none;
 }
+
+.gallery{
+    background-color: rgba(63, 87, 139, 0.435)
+}
+.mycard{
+    background-color: rgba(63, 87, 139, 0.793)
+}
+.nav-link{
+    color:white;
+}
+
+body{
+
+    background-image: url('../static/images/back.jpg');
+}
+ 

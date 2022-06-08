@@ -23,6 +23,12 @@ class Profile(models.Model):
  
    def __str__(self):
        return self.name
+
+@classmethod
+def search_by_username(cls,search_username):
+        username = Profile.objects.filter(profile__username__icontains=search_username)
+        return username
+
    
 class Comments(models.Model):
    comment = models.TextField(max_length=200,null=True, blank=True)
