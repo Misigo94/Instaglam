@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<style>
+    body {
+
+        /* background-color: rgb(125, 6, 125); */
+        background-image: url('../static/images/back.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+<form action="" method="post" class="form">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock%}
