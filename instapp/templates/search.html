@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
+<style>
+    body {
+
+        /* background-color: rgb(125, 6, 125); */
+        background-image: url('../static/images/back.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+<!-- <div class="container">
     <div class="row">
 
         {% if usernames%}
@@ -30,6 +40,24 @@
         </div>
         {% endif %}
     </div>
-</div>
+</div> -->
+
+<!-- <input type="text" placeholder="Search" name="q" value="{{ request.GET.q }}"> -->
+{% if query %}
+{% if results %}
+<ul>
+    {% for item in results %}
+    <li>{{ item|escape }}</li>
+    <p>{{item.username}}</p>
+
+        {% if profile.name %}
+        <img src="{{ profile.profile.name }}" alt="User Picture">
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<p>Query returned no results.</p>
+{% endif %}
+{% endif %}
 
 {% endblock %}
