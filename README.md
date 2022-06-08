@@ -1,5 +1,5 @@
 Instagram
-AA project that ahs cloned the instagrm application that allowd the users to view and like comment on other peoples 
+A project that has cloned the instagrm application that allowd the users to view and like comment on other peoples 
 
 Author
 Martin Misigo
